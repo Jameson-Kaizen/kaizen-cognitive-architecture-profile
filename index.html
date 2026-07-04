@@ -116,7 +116,7 @@ function Question({q,i,n,onPick,onBack}){
     if(!isFC){onPick(v);return}
     if(most==null){setMost(v)}else{onPick({m:most,l:v})}
   }
-  return <div className="wrap"><Progress i={i} n={n}/><div className="muted">Question {i+1} of about {n}</div>
+  return <div className="wrap"><Progress i={i} n={n}/>
     <h2 style={{marginTop:6}}>{q.text}</h2>
     {isFC&&<p className="muted" style={{marginTop:0}}>{most==null?"First: pick the one MOST like you.":"Now: which of these is LEAST like you?"}</p>}
     {shown.map(o=><button key={o.val} className={"opt"+(isFC?" fc":"")} onClick={()=>click(o.val)}>{o.label}</button>)}
